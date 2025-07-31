@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSCE Portal Backend</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎓 DSCE Portal Backend API</h1>
+            <p>College Management System Backend Service</p>
+        </div>
+        
+        <div class="card status-card">
+            <h3>✅ Server Status</h3>
+            <p><strong>Status:</strong> Running Successfully!</p>
+            <p><strong>Server Time:</strong> <span th:text="${serverTime}"></span></p>
+            <p><strong>Database:</strong> <span th:text="${databaseStatus}"></span></p>
+            <p><strong>Tables:</strong> <span th:text="${tableCount}"></span> created</p>
+        </div>
+        
+        <div class="card">
+            <h2>📋 Available API Endpoints</h2>
+            
+            <div class="endpoint">
+                <span class="method post">POST</span>
+                <span class="url">/api/auth/department/login</span>
+                <p>Department admin login for dashboard access</p>
+            </div>
+            
+            <div class="endpoint">
+                <span class="method post">POST</span>
+                <span class="url">/api/auth/student/login</span>
+                <p>Student login with generated credentials</p>
+            </div>
+            
+            <div class="endpoint">
+                <span class="method post">POST</span>
+                <span class="url">/api/auth/teacher/login</span>
+                <p>Teacher login with generated credentials</p>
+            </div>
+            
+            <div class="endpoint">
+                <span class="method post">POST</span>
+                <span class="url">/api/auth/admin/login</span>
+                <p>Admin login (Food Cart, Canteen, Stationery)</p>
+            </div>
+            
+            <div class="endpoint">
+                <span class="method get">GET</span>
+                <span class="method post">POST</span>
+                <span class="url">/api/students</span>
+                <p>Manage students (Create with auto-generated credentials)</p>
+            </div>
+            
+            <div class="endpoint">
+                <span class="method get">GET</span>
+                <span class="method post">POST</span>
+                <span class="url">/api/teachers</span>
+                <p>Manage teachers (Create with auto-generated credentials)</p>
+            </div>
+            
+            <div class="endpoint">
+                <span class="method get">GET</span>
+                <span class="method post">POST</span>
+                <span class="url">/api/admins</span>
+                <p>Manage admins (Create with auto-generated credentials)</p>
+            </div>
+            
+            <div class="endpoint">
+                <span class="method get">GET</span>
+                <span class="url">/api/test/status</span>
+                <p>Test endpoint to verify API is working</p>
+            </div>
+        </div>
+        
+        <div class="card credentials">
+            <h2>🔑 Default Login Credentials</h2>
+            <p><strong>Department Admin Dashboard:</strong></p>
+            <p>Email: <code>admin@dsce.edu.in</code></p>
+            <p>Password: <code>admin123</code></p>
+        </div>
+        
+        <div class="card">
+            <h2>🌐 API Information</h2>
+            <p><strong>Base URL:</strong> <code th:text="${baseUrl}"></code></p>
+            <p><strong>Context Path:</strong> <code>/dsce-portal</code></p>
+            <p><strong>Database:</strong> MySQL - dsce_portal</p>
+        </div>
+        
+        <div class="footer">
+            <p>&copy; 2024 DSCE Portal Backend - College Management System</p>
+        </div>
+    </div>
+</body>
+</html>
